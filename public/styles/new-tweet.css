@@ -4,10 +4,6 @@
   justify-content: space-between; 
   width: 100%;
 }*/
-main {
-  display: flaw;
-  align-content: center;
-}
 
 #tweet-text {
   width: 100%;
@@ -35,22 +31,22 @@ main {
   width: 100%;
 }
 
-.new-tweet-r1 {
+.new-tweet-row1 {
   display: flex;
   width: 100%;
 }
-.new-tweet-r2 {
+.new-tweet-row2 {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start; 
   width: 100%;
 }
-.new-tweet-r3c1 {
+.new-tweet-row3col1 {
   display: flex;
   justify-content: flex-start; 
   width: 50%;
 }
-.new-tweet-r3c2 {
+.new-tweet-row3col2 {
   display: inline-flex;
   justify-content: flex-end; 
   width: 50%;
