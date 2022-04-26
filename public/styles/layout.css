@@ -38,59 +38,58 @@ main {
   margin: auto;
 }
 
+/*Styles for the article tag where all tweets are displayed */
 
-.display-tweet {
-/*  display: flex;*/
+.tweet {
   border-style: solid;
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 50px;
+  padding: 15px;
+   border: 3px solid #778899;  
+  width:100%;
+  padding: 10px 10px 25px 10px;  
 }
-.display-tweet:hover {
+
+.tweet:hover {
   box-shadow: 10px 10px #778899;
 }
 
-article {
-  display: flex;
-  flex-flow: column wrap;
-  margin-top: 10px;
-  padding: 15px;
-}
-
-article footer{
+.tweet header {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between; 
-  margin-top: 15px;
+  justify-content: space-between;   
 }
 
-article header span {
+.tweet header div {
   font-size: small;  
   font-weight: normal;
   font-family: sans-serif;
  }
-article footer span {
+
+.tweet footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; 
+  padding: 15px 10px 0px 10px;  
+}
+.tweet footer div {
   font-size: small;  
   font-weight: normal;
   font-family: sans-serif;
 }
 
-article footer i:hover {
+.tweet footer i:hover {
    color: 		#FBCEB1;
 }
 
-article header{
+.tweet .tweet-body {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between; 
-}
-
-.tweet {
-  font-weight: normal;
-  font-family: sans-serif;
-  border-bottom: solid;
-  width:100%;
-}
-
-
-.avatar img {
+  border-bottom: 3px solid #778899;
+  padding: 25px 10px 25px 10px;  
+ }
+.tweet header img {
   width: 50px;
   height: 50px;  
 }

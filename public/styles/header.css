@@ -1,12 +1,12 @@
 header.main {
   display: flex;
-  height: 400px;
+  height: 400x;
   width: 100%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: lightgrey;
   opacity: 0.75;
+  background-color: lightgrey;
   background-image: url("/images/black-linen.png");
-  padding: 340px;
+  padding-top: 130px
 }
+

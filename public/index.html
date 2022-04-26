@@ -42,46 +42,48 @@
         <span>Write a new tweet</span>
         <span class="nav-span2-arrow"><i class="fa-solid fa-angles-down"></i></span>      
       </span>
-      <!-- <span>Write a new tweet<br><i class="fa-solid fa-angles-down"></i></span> -->
-    </nav>
+      </nav>
     
     <header class="main">
-      <div class="header-avatar">
+      <div>
         <img src="/images/profile-hex.png"> 
      </div>
-      <br>
-      <div class="header-name">
+      <div>
           <h2>Jennifer Manwell</h2>
       </div>
     </header>
+    
 
     <!-- Page-specific (main) content here -->
     <main>
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form class="new-tweet-form" method="POST" action="./tweets">
-            <div class="new-tweet-row1"><label for="tweet-text">What are you humming about?</label></div>
-            <div class="new-tweet-row2"><textarea name="text" id="tweet-text" placeholder=""></textarea></div>
-            <div class="new-tweet-row3col1"><button class="tweet-button" type="submit">Tweet</button></div>
-            <div class="new-tweet-row3col2"><output name="counter" class="counter" for="tweet-text">140</output></div>
+          <form class="new-tweet-form" method="POST" action="./tweets">
+            <header>
+              <div><label for="tweet-text">What are you humming about?</label></div>
+              <div><textarea name="text" id="tweet-text" placeholder=""></textarea></div>
+            </header>
+            <footer>
+              <div><button class="tweet-button" type="submit">Tweet</button></div>
+              <div><output name="counter" class="counter" for="tweet-text">140</output></div>
+            </footer>
         </form>
       </section>
 
-      <article class="display-tweet" id="display-tweet">
+      <article class="tweet" id="tweet">
         <header>
-          <span class="avatar"><img src="/images/profile-hex.png"></span>
-          <span class="userName">@Username</span>
+          <div><img src="/images/profile-hex.png"></div>
+          <div>@Username</div>
         </header>
 
-        <span class="tweet">My awesomely amazing tweet</span>
+        <div class="tweet-body">My awesomely amazing tweet</div>
 
         <footer>
-          <span class="age">somedate</span>
-           <span class="icons">
+          <div >somedate</div>
+           <div>
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-retweet"></i>
-           </span>
+           </div>
         </footer>
       </article>
   
