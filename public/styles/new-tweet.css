@@ -1,0 +1,50 @@
+/*.new-tweet {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; 
+  width: 100%;
+}*/
+
+#tweet-text {
+  width: 100%;
+  outline: 0;
+  border-width: 0 0 2px;   
+  margin-top: 10px; 
+}
+
+.tweetButton {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: Bungee, sans-serif; 
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.new-tweet-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.new-tweet-1 {
+  display: flex;
+  width: 100%;
+}
+.new-tweet-2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; 
+  width: 100%;
+}
+.new-tweet-3 {
+  display: flex;
+  justify-content: flex-start; 
+  width: 50%;
+}
+.new-tweet-4 {
+  display: flex;
+  justify-content: flex-end; 
+  width: 50%;
+  margin-top: 10px;
+}
