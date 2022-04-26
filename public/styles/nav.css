@@ -24,8 +24,19 @@ nav {
   display: flex;  
   flex-direction: column;
   align-items: center;
+  font-size: medium;
 }
 
 .nav-span2-arrow {
   color: red;
+  animation-name            : displaceContent;
+  animation-duration        : 1.5s;
+ /* animation-delay           : 1s;*/
+  animation-iteration-count : infinite;
+  animation-fill-mode       : forwards;
+}
+
+@keyframes displaceContent {
+  from { transform : translateY(0em) }
+  to   { transform : translateY(0.5em) } /* slide down to make room for advertisements */
 }

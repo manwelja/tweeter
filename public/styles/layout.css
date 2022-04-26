@@ -46,7 +46,7 @@ main {
   flex-flow: column wrap;
   margin-top: 50px;
   padding: 15px;
-   border: 3px solid #778899;  
+  border: 3px solid #778899;  
   width:100%;
   padding: 10px 10px 25px 10px;  
 }
@@ -58,9 +58,14 @@ main {
 .tweet header {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;   
+  justify-content: space-between; 
+  align-items: center; 
 }
 
+.tweet header .avatar {
+  display: flex;
+  align-items:center;
+}
 .tweet header div {
   font-size: small;  
   font-weight: normal;
