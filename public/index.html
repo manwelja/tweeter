@@ -45,12 +45,12 @@
       <!-- <span>Write a new tweet<br><i class="fa-solid fa-angles-down"></i></span> -->
     </nav>
     
-    <header>
+    <header class="main">
       <div class="header-avatar">
         <img src="/images/profile-hex.png"> 
      </div>
       <br>
-      <div class="header-nam"e>
+      <div class="header-name">
           <h2>Jennifer Manwell</h2>
       </div>
     </header>
@@ -66,8 +66,27 @@
             <div class="new-tweet-row3col2"><output name="counter" class="counter" for="tweet-text">140</output></div>
         </form>
       </section>
-    </main>
 
+      <article class="display-tweet" id="display-tweet">
+        <header>
+          <span class="avatar"><img src="/images/profile-hex.png"></span>
+          <span class="userName">@Username</span>
+        </header>
+
+        <span class="tweet">My awesomely amazing tweet</span>
+
+        <footer>
+          <span class="age">somedate</span>
+           <span class="icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-retweet"></i>
+           </span>
+        </footer>
+      </article>
+  
+    </main>
+<br><br><br>
   </body>
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 </html>
