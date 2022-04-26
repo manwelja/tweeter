@@ -13,7 +13,7 @@
   margin-bottom: 10px;
 }
 
-.tweetButton {
+.tweet-button {
   background-color: #4056A1;
   color: #FFFFFF;
   font-family: Bungee, sans-serif;   
@@ -50,4 +50,8 @@
   display: inline-flex;
   justify-content: flex-end; 
   width: 50%;
+}
+
+.red {
+  color: red;
 }
