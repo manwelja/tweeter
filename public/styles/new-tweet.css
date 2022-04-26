@@ -27,22 +27,22 @@
   width: 100%;
 }
 
-.new-tweet-1 {
+.new-tweet-r1 {
   display: flex;
   width: 100%;
 }
-.new-tweet-2 {
+.new-tweet-r2 {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start; 
   width: 100%;
 }
-.new-tweet-3 {
+.new-tweet-r3c1 {
   display: flex;
   justify-content: flex-start; 
   width: 50%;
 }
-.new-tweet-4 {
+.new-tweet-r3c2 {
   display: flex;
   justify-content: flex-end; 
   width: 50%;
