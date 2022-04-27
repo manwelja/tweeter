@@ -2,6 +2,7 @@ span {
   font-family: Bungee, sans-serif;  
 }
 
+/* the nav section contains the top navigation bar */
 nav {
   display: flex;
   flex-flow: row nowrap;
@@ -16,10 +17,14 @@ nav {
   position: fixed;
   top: 0;
 }
+
+/* name of app */
 .nav-span1 {
   display: flex;  
   flex-direction: column;
 }
+
+/* write a new tweet */
 .nav-span2 {
   display: flex;  
   flex-direction: column;
@@ -27,6 +32,7 @@ nav {
   font-size: medium;
 }
 
+/* animated arrow */
 .nav-span2-arrow {
   color: red;
   animation-name            : displaceContent;
