@@ -88,24 +88,46 @@ const renderTweets = function(tweetData) {
   });
 };
 
+//check the tweet text for errors
+const tweetError = function() {
+  //get the length of the tweet for error checking
+  const $tweetTextLen = $("#tweet-text").val().length;
+
+  //If the tweet length is too long or 0, exit without submitting
+  if ($tweetTextLen > 140) {
+    displayError(`You have entered ${$tweetTextLen} characters, but the limit is 140.  Please adjust your tweet accordingly.`);
+    return true;
+  }
+  if ($tweetTextLen === 0) {
+    displayError(`You are trying to submit an empty tweet.  Please enter something to post.`)
+    return true;
+  }
+  return false;
+};
+
+//display error message to user
+const displayError = function(errMsg) {
+  $("#error-message").text("");
+  $("#error-message").append(`<i class="fa-solid fa-triangle-exclamation"></i> ${errMsg} <i class="fa-solid fa-triangle-exclamation"></i>`);
+  $("#error-message").slideDown(1000);
+};
+ 
+
 window.addEventListener('DOMContentLoaded', (event) => {
   // when the new tweet form is submitted, let's display the tweets!
   $(".new-tweet-form").on("submit", function(event) {
     event.preventDefault();
     
-    //get the length of the tweet for error checking
-    const $tweetTextLen = $("#tweet-text").val().length;
-
-    //If the tweet length is too long or 0, exit without submitting
-    if ($tweetTextLen > 140) {
-      alert(`Tweeter Error!\nYou have entered ${$tweetTextLen} characters, but the limit is 140.  Please adjust your tweet accordingly.`);
+    if (tweetError()) {
       return;
     }
-    if ($tweetTextLen === 0) {
-      alert(`Tweeter Error!\nYou are trying to submit an empty tweet.  Please enter something to post.`);
-      return;
+    $( "#error-message" ).slideUp(1000)
+    //if all is good, hide the error message section
+    if (!$("#error-message").addClass("hide")) {
+      $( "#error-message" ).slideUp(1000);
     }
-    
+  
+        
     //serialize the tweet text for posting
     const tweetData = $(this).serialize();
     
@@ -141,6 +163,6 @@ $(document).ready(function() {
         renderTweets(morePostsHtml);
       });
   };
-
+  $("#error-message").slideUp(1000);
   loadTweets();
 });

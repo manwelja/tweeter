@@ -36,6 +36,7 @@ main {
   background-color: #f4f1ec;
   width: 90%;
   margin: auto;
+  padding-bottom: 30px;
 }
 
 /*Styles for the article tag where all tweets are displayed */
@@ -102,4 +103,19 @@ main {
   flex-flow: row nowrap;
   border-bottom: 3px solid #778899;
   padding: 25px 10px 25px 10px;  
+ }
+
+ /* error message styles */
+
+ .error-message {
+   border: 3px solid red;
+   color: red;
+   text-align: center;
+   margin-top: 20px;
+   width: 100%;   
+ }
+
+ .hide {
+  display: none;
+
  }
