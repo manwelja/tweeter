@@ -7,17 +7,29 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
   },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-};
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }]
 
 const createTweetElement2 = function(tweetData) {
 
@@ -41,8 +53,8 @@ const createTweetElement2 = function(tweetData) {
   //set up header
   $divAvatarImg.addClass("avatar");
   $divAvatarImg.append(`<img src=${tweetData.user.avatars}></img>`);
-  $divName.append(`$(tweetData.user.avatars)`);
-  $divHandle.append(`$(tweetData.user.handle)`);
+  $divName.append(`${tweetData.user.name}`);
+  $divHandle.append(`${tweetData.user.handle}`);
  
   $divAvatarImg.append($divName);
   $header.append($divAvatarImg);
@@ -75,7 +87,7 @@ const createTweetElement2 = function(tweetData) {
 
 const createTweetElement = function(tweetData) {
   
-  const tweetHTML = `<article class="tweet" id="tweet">
+  const $tweetHTML = `<article class="tweet" id="tweet">
     <header>
     <div class="avatar"><img src=${tweetData.user.avatars}><div>${tweetData.user.name}</div></div>
     <div>${tweetData.user.handle}</div>
@@ -90,20 +102,39 @@ const createTweetElement = function(tweetData) {
     </div>
     </footer></article>`;
 
-  return tweetHTML;
+  return $tweetHTML;
+};
+
+const renderTweets = function(tweetData) {
+  tweetData.forEach((element) => {
+    $('#tweets-container').append(createTweetElement2(element));
+
+  });
 };
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  // when the tweet button is clicked, run the function
-  $(".tweet-button").on("click", function(event) {
+  // when the new tweet form is submitted, let's display the tweets!
+  $(".new-tweet-form").on("submit", function(event) {
     event.preventDefault();
-
-    const $tweet = createTweetElement2(tweetData);
+    renderTweets(data);
   
-    $('#tweets-container').append($tweet);
+    const tweetData = $(this).serialize();
+    console.log(this, tweetData);
     
+    $.ajax({
+      method: "POST",
+      data: tweetData,
+      url: "/tweets",
+    })
+      .then((res) => {
+        //call render tweets here
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    });
   });
-
+$(document).ready(function() {
+  
 });
-
-//});
