@@ -4,33 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
-
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }]
-
 const createTweetElement2 = function(tweetData) {
 
   // Create base HTML elements
@@ -46,13 +19,13 @@ const createTweetElement2 = function(tweetData) {
   const $iFlag = $("<i>");
   const $iHeart = $("<i>");
   const $iRetweet = $("<i>");
-  
+ 
   $article.addClass("tweet");
   $article.attr('id', 'tweet');
   
-  //set up header
+  //set up header secion with avatar, usernams and handle
   $divAvatarImg.addClass("avatar");
-  $divAvatarImg.append(`<img src=${tweetData.user.avatars}></img>`);
+  $divAvatarImg.append(`<img src=${(tweetData.user.avatars)}></img>`);
   $divName.append(`${tweetData.user.name}`);
   $divHandle.append(`${tweetData.user.handle}`);
  
@@ -61,14 +34,15 @@ const createTweetElement2 = function(tweetData) {
   $header.append($divHandle);
   $article.append($header);
   
-  //set up content
+  //set up content section
   $divBody.addClass("tweet-body");
-  $divBody.append(`${tweetData.content.text}`);
+  //use .text to ensure that any user entered javascript is not executed
+  $divBody.text(`${(tweetData.content.text)}`);
 
   $article.append($divBody);
 
-  //set up footer
-  $divCreated.append(`${tweetData.created_at}`);
+  //set up footer section
+  $divCreated.append(`${timeago.format(tweetData.created_at, "pt_BR")}`);
   $footer.append($divCreated);
 
   $iFlag.addClass("fa-solid fa-flag");
@@ -86,29 +60,31 @@ const createTweetElement2 = function(tweetData) {
 }
 
 const createTweetElement = function(tweetData) {
+
+  //escape the tweet field to ensure any user entered script is not executed when the data is loaded
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(tweetData.content.text));
   
   const $tweetHTML = `<article class="tweet" id="tweet">
     <header>
     <div class="avatar"><img src=${tweetData.user.avatars}><div>${tweetData.user.name}</div></div>
     <div>${tweetData.user.handle}</div>
     </header>
-    <div class="tweet-body">${tweetData.content.text}</div>
+    <div class="tweet-body">${div.innerHTML}</div>
     <footer>
-    <div>${tweetData.created_at}</div>
+    <div>${timeago.format(tweetData.created_at, "pt_BR")}</div>
     <div>
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
       <i class="fa-solid fa-heart"></i>
     </div>
     </footer></article>`;
-
   return $tweetHTML;
 };
 
 const renderTweets = function(tweetData) {
   tweetData.forEach((element) => {
-    $('#tweets-container').append(createTweetElement2(element));
-
+    $('#tweets-container').append(createTweetElement(element));
   });
 };
 
@@ -116,25 +92,55 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // when the new tweet form is submitted, let's display the tweets!
   $(".new-tweet-form").on("submit", function(event) {
     event.preventDefault();
-    renderTweets(data);
-  
-    const tweetData = $(this).serialize();
-    console.log(this, tweetData);
     
+    //get the length of the tweet for error checking
+    const $tweetTextLen = $("#tweet-text").val().length;
+
+    //If the tweet length is too long or 0, exit without submitting
+    if ($tweetTextLen > 140) {
+      alert(`Tweeter Error!\nYou have entered ${$tweetTextLen} characters, but the limit is 140.  Please adjust your tweet accordingly.`);
+      return;
+    }
+    if ($tweetTextLen === 0) {
+      alert(`Tweeter Error!\nYou are trying to submit an empty tweet.  Please enter something to post.`);
+      return;
+    }
+    
+    //serialize the tweet text for posting
+    const tweetData = $(this).serialize();
+    
+    //post teh tweet data using alax
     $.ajax({
       method: "POST",
       data: tweetData,
       url: "/tweets",
     })
       .then((res) => {
-        //call render tweets here
-        console.log(res);
+        //if success, empty the tweet field and render the resulting tweet
+        $("#tweet-text").val("");
+        renderTweets([res]);
       })
+      //alert the user if an error was encountered with the submission process
       .catch((err) => {
-        console.log(err);
+        alert(err);
       });
-    });
   });
+});
+
 $(document).ready(function() {
-  
+
+  //function to load tweet database
+  const loadTweets = function() {
+    //execute an ajax get request to retrieve existing tweet data
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    })
+      .then(function (morePostsHtml) {
+        //pass the existing tweets to be loaded
+        renderTweets(morePostsHtml);
+      });
+  };
+
+  loadTweets();
 });
