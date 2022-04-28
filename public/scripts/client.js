@@ -59,6 +59,7 @@ const createTweetElement = function(tweetData) {
   return $article;
 };
 
+//Update the DOM to display an array of tweets
 const renderTweets = function(tweetData) {
   tweetData.forEach((element) => {
     $('#tweets-container').append(createTweetElement(element));
@@ -97,6 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (tweetError()) {
       return;
     }
+
     $("#error-message").slideUp(1000);
     //if all is good, hide the error message section
     if (!$("#error-message").addClass("hide")) {
@@ -140,7 +142,7 @@ $(document).ready(function() {
         renderTweets(morePostsHtml);
       });
   };
-
+  //Hide the error message box
   $("#error-message").slideUp(1000);
   
   loadTweets();
