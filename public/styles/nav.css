@@ -1,5 +1,5 @@
 span {
-  font-family: Bungee, sans-serif;  
+  font-family: 'Bungee', cursive, sans-serif;  
 }
 
 /* the nav section contains the top navigation bar */
@@ -17,27 +17,33 @@ nav {
   top: 0;
 }
 
-
-/* name of app */
-.nav-span1 {
- /* display: flex;  
-  flex-direction: column;
-  align-items: flex-start;*/
+/* App name section of the nav */
+nav .nav-col1 {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 48px;
 }
 
-/* write a new tweet */
-.nav-span2 {
+/* write a new tweet section of the nav */
+nav .nav-col2 {
   display: flex;  
   flex-direction: column;
   justify-content: center;  
 }
 
-.nav-span2-text {
-  font-family: sans-serif;
+nav .nav-col2-text span {
+ font-family: 'Source Sans Pro', sans-serif;
+ font-weight: 300;
 }
 
+nav .nav-col2-text .heavy {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+ }
+
 /* animated arrow */
-.nav-span2-arrow {
+nav .nav-col2-arrow {
   align-self: center;
   color: red;
   animation-name            : displaceContent;
