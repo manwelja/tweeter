@@ -15,9 +15,16 @@ In it's current state it meets the core expectations for the Lighthouse Labs Twi
 
 ## Final Product - Screenshots of Tweet page
 
+### 1. Sized for tablet
 !["Sized for tablet"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-tablet-size.png)
+
+### 2. Sized for desktop
 !["Sized for desktop"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-desktop-size.png)
+
+### 3. Displaying error message
 !["Displaying error message"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-error-message.png)
+
+### 4. Displaying updated character counter
 !["Displaying updated character counter"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-counter-update.png)
 
 ## Getting Started
