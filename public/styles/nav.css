@@ -1,3 +1,4 @@
+ /* Tablets: Default CSS settings */
 span {
   font-family: 'Bungee', cursive, sans-serif;  
 }
@@ -7,14 +8,12 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  height: 120px;
-  background-color: #4056A1;
+  height: 90px;
+  opacity: 0.9;
+  background-color: #EC9706;
+  background-image: url("/images/asfalt-light.png");
   color: #FFFFFF;
-  padding: 0.5em 1.5em 0em 1.5em;
-  z-index: 1;
-  width: 100%;
-  position: fixed;
-  top: 0;
+  padding: 0.5rem 1.5rem 0.6rem 1.5rem; 
 }
 
 /* App name section of the nav */
@@ -22,14 +21,16 @@ nav .nav-col1 {
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 1.75rem;
 }
 
 /* write a new tweet section of the nav */
 nav .nav-col2 {
   display: flex;  
   flex-direction: column;
-  justify-content: center;  
+  justify-content: center; 
+  align-content: flex-end;
+  font-size: 1.5rem; 
 }
 
 nav .nav-col2-text span {
@@ -57,25 +58,25 @@ nav .nav-col2-arrow {
   to   { transform : translateY(0.5em) } /* slide down to make room for advertisements */
 }
 
+
+ /* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
   nav {       
-    opacity: 0.9;    
-    background-color: #EC9706;
-    background-image: url("/images/asfalt-light.png");
-    background-color: transparent;
+    background-color: #4056A1;
+    opacity: 1;
     background-image: none;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    top: 0;
   }
+}
 
-  /* App name section of the nav */
-  nav .nav-col1 {
-    flex-grow: 1;
-    background-color: transparent;
-    background-image: none;
+ /* Mobile: maximum width of 420px */
+@media only screen and (max-width: 420px) {
+  /* Set all sections to 410px in length - smaller is not readable*/ 
+  nav {
+    min-width: 410px;
+    position: relative;
   }
-  nav .nav-col2 {
-  
-    background-color: #EC9706;
-    background-image: url("/images/asfalt-light.png");   
-    flex-grow: 1;
- }
 }
