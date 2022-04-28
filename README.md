@@ -15,10 +15,10 @@ In it's current state it meets the core expectations for the Lighthouse Labs Twi
 
 ## Final Product - Screenshots of Tweet page
 
-!["Sized for tablet"](https://github.com/lighthouse-labs/tinyapp/blob/master/public/docs/Tweeter-tablet-size.png)
-!["Sized for desktop"](https://github.com/lighthouse-labs/tinyapp/blob/master/public/docs/Tweeter-desktop-size.png)
-!["Displaying error message"](https://github.com/lighthouse-labs/tinyapp/blob/master/public/docs/Tweeter-error-message.png)
-!["Displaying updated character counter"](https://github.com/lighthouse-labs/tinyapp/blob/master/public/docs/Tweeter-counter-update.png)
+!["Sized for tablet"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-tablet-size.png)
+!["Sized for desktop"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-desktop-size.png)
+!["Displaying error message"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-error-message.png)
+!["Displaying updated character counter"](https://github.com/manwelja/tweeter/blob/master/public/docs/Tweeter-counter-update.png)
 
 ## Getting Started
 
