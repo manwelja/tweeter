@@ -52,6 +52,7 @@ header div img {
   /* Set all sections to 400px in length - smaller is not readable*/ 
   header.main {
     position: relative;
-    min-width: 410px;
+    width: 100%;
+    margin: 0px;
   }
 }

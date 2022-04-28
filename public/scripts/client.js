@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const createTweetElement2 = function(tweetData) {
+const createTweetElement = function(tweetData) {
 
   // Create base HTML elements
   const $article = $("<article>");
@@ -57,29 +57,6 @@ const createTweetElement2 = function(tweetData) {
   $article.append($footer);
 
   return $article;
-}
-
-const createTweetElement = function(tweetData) {
-
-  //escape the tweet field to ensure any user entered script is not executed when the data is loaded
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(tweetData.content.text));
-  
-  const $tweetHTML = `<article class="tweet" id="tweet">
-    <header>
-    <div class="avatar"><img src=${tweetData.user.avatars}><div>${tweetData.user.name}</div></div>
-    <div>${tweetData.user.handle}</div>
-    </header>
-    <div class="tweet-body">${div.innerHTML}</div>
-    <footer>
-    <div>${timeago.format(tweetData.created_at, "pt_BR")}</div>
-    <div>
-      <i class="fa-solid fa-flag"></i>
-      <i class="fa-solid fa-retweet"></i>
-      <i class="fa-solid fa-heart"></i>
-    </div>
-    </footer></article>`;
-  return $tweetHTML;
 };
 
 const renderTweets = function(tweetData) {
@@ -112,8 +89,7 @@ const displayError = function(errMsg) {
   $("#error-message").slideDown(1000);
 };
  
-
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
   // when the new tweet form is submitted, let's display the tweets!
   $(".new-tweet-form").on("submit", function(event) {
     event.preventDefault();
@@ -121,10 +97,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (tweetError()) {
       return;
     }
-    $( "#error-message" ).slideUp(1000)
+    $("#error-message").slideUp(1000);
     //if all is good, hide the error message section
     if (!$("#error-message").addClass("hide")) {
-      $( "#error-message" ).slideUp(1000);
+      $("#error-message").slideUp(1000);
     }
   
         
@@ -159,7 +135,7 @@ $(document).ready(function() {
       method: "GET",
       url: "/tweets",
     })
-      .then(function (morePostsHtml) {
+      .then(function(morePostsHtml) {
         //pass the existing tweets to be loaded
         renderTweets(morePostsHtml);
       });

@@ -7,7 +7,6 @@
   outline: 0;
   border-width: 0 0 2px;   
   margin-top: 10px; 
-  margin-bottom: 10px;
 }
 
 /* styles for header section */
@@ -16,7 +15,7 @@
   flex-flow: column wrap;
   width: 100%;  
   margin-top: 30px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -25,6 +24,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between; 
+  font-size: 1.5rem;
   width: 100%;  
 }
 
@@ -35,46 +35,26 @@
   border-radius: 8px;
 }
 .counter {
-  vertical-align: bottom;  
-  margin-top: 10px;
+  vertical-align: bottom;    
 }
 
 .red {
   color: red;
 }
 
-/* Laptops / Desktops: minimum width of 1024px */
-@media only screen and (min-width: 1024px) {
-  #tweet-text {
-    width: 100%;
-  }
-  
-  /* styles for header section */
-  .new-tweet-form header {
-    width: 95%;    
-  }
-
-  /* styles for footer sections */
-  .new-tweet-form footer {
-    width: 95%; 
-   }  
-  }
-
+ /****************************************************  MEDIA EXCEPTIONS ****************************************************/
  /* Mobile: maximum width of 420px - this is where the app starts looking rough */
  @media only screen and (max-width: 420px) {
-   /* Set all sections to 410px in length - smaller is not readable*/ 
-  #tweet-text {
-    position: relative;
-    min-width: 410px;
-  }  
+   /* Set all sections to 100% of the parent width - smaller is not readable*/ 
+  
   /* styles for header section */
-  .new-tweet-form header {   
-    position: relative; 
-    min-width: 410px;  
+  .new-tweet-form header{   
+    position: relative;    
+    width: 100%;
   }
   /* styles for footer sections */
   .new-tweet-form footer {
-    position: relative;
-    min-width: 410px; 
+    position: relative;    
+    width: 100%;
    }  
 }

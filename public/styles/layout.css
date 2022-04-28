@@ -34,6 +34,7 @@ main {
   justify-content: center;
   background-color: #f4f1ec;
   margin: auto;
+  width: 90%;
   padding-bottom: 3%;
 }
 
@@ -44,7 +45,6 @@ main {
   flex-flow: column wrap;
   margin-top: 5%;
   border: 0.2rem solid #778899;  
-  width: 90vw;
   padding: 1% 2%;
 }
 
@@ -84,9 +84,14 @@ main {
   padding: 0.5rem;  
 }
 .tweet footer div {
-  font-size: small;  
+  font-size: 1rem;  
   font-weight: normal;
   font-family: sans-serif;
+}
+
+.tweet footer div i {
+  font-size: 1rem;  
+  padding: 0.25rem;
 }
 
 .tweet footer i:hover {
@@ -99,7 +104,7 @@ main {
   flex-flow: row nowrap;
   border-bottom: solid #778899;
   font-size: 1.25rem;
-  padding: 0.5rem;  
+  padding: 0.5rem;   
  }
 
  /* error message styles */
@@ -107,7 +112,7 @@ main {
    border: 0.1rem solid red;
    color: red;
    text-align: center;
-   font-size: 1.25rem;
+   font-size: 1.5rem;
    margin-top: 2vh;
    width: 90vw;
  }
@@ -116,20 +121,21 @@ main {
   display: none;
  }
 
+  /****************************************************  MEDIA EXCEPTIONS ****************************************************/
   /* Laptops / Desktops: minimum width of 1024px */
  @media only screen and (min-width: 1024px) {
   .parent {
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
+    max-width: 2048px;
   }
   main {
-    margin: 125px 2px 2px 2px;
-    width: 100%;   
-    align-items: flex-end;
+    margin: 125px 30px 2px 2px;
+    align-items: flex-end;    
   }
   #tweets-container {
-    width: 95%;      
+    width: 100%;      
   }
   .tweet {
     width: 100%;
@@ -146,31 +152,21 @@ main {
   }
 
  }
-
-
  /* Mobile: maximum width of 420px - this is where the app starts looking rough*/
  @media only screen and (max-width: 420px) {
  /* Set all sections to 410px in length - smaller is not readable*/ 
-  main {
+  .parent {
     min-width: 410px;   
-    padding: 5px;    
+    position: absolute; 
   }
-  body {
-    min-width: 410px;  
-    position: relative; 
-    margin: 2px;
-  }
-  .tweet {
-    min-width: 410px;
-    position: relative;
-  }
+  main {
+    width: 90%;
+    position: relative;    
+  } 
   .error-message {
     margin-top: 2%;
-    min-width: 410px;
-    position: relative;
-  }
-  #tweets-container {
-    min-width: 410px;
+    width: 100%;
+    font-size: 1.25rem;
     position: relative;
   }
 }
