@@ -28,3 +28,20 @@ header div {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
 }
+
+@media only screen and (min-width: 1024px) {
+
+  header.main {
+    display: flex;
+    height: 475px;
+    width: 100%;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    opacity: 0.9;
+    background-color: #EC9706;
+    background-image: url("/images/asfalt-light.png");
+    padding-bottom: 25px;
+  }
+}

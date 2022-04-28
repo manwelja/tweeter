@@ -18,12 +18,11 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 24px;  
+  font-size: 1.5em;  
 }
 
-  /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+  /****************************************/
+
  .parent {
   display: flex;
   flex-direction: column;
@@ -32,9 +31,8 @@ body {
 main {
   justify-content: center;
   background-color: #f4f1ec;
-  width: 90%;
   margin: auto;
-  padding-bottom: 30px;
+  padding-bottom: 5vh;
 }
 
 /*Styles for the article tag where all tweets are displayed */
@@ -43,15 +41,14 @@ main {
   border-style: solid;
   display: flex;
   flex-flow: column wrap;
-  margin-top: 50px;
-  padding: 15px;
-  border: 3px solid #778899;  
-  width:100%;
-  padding: 10px 10px 25px 10px;  
+  margin-top: 3vh;
+  border: 0.2rem solid #778899;  
+  width: 90vw;
+  padding: 1vh 1vw;
 }
 
 .tweet:hover {
-  box-shadow: 10px 10px #778899;
+  box-shadow: 1.5vw 1.5vh #778899;
 }
 
 /* tweet header displays user information (avatar, username, etc...) */
@@ -59,31 +56,31 @@ main {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between; 
-  align-items: center; 
+  align-items: flex-start; 
 }
 
 .tweet header .avatar {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 .tweet header div {
-  font-size: small;  
-  font-weight: normal;
-  font-family: sans-serif;
+  font-size: 1rem;  
+  vertical-align: top;
+  font-weight: normal;  
  }
 
  .tweet header img {
-  width: 50px;
-  height: 50px;  
-  margin-right: 10px;
-}
+  width: 5rem;
+  height: 5rem;  
+  padding: 1rem;  
+ }
  /* tweet footer displays age age of tweet and flag/retweet/love icons */
 
 .tweet footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between; 
-  padding: 15px 10px 0px 10px;  
+  padding: 0.5rem;  
 }
 .tweet footer div {
   font-size: small;  
@@ -99,21 +96,31 @@ main {
 .tweet .tweet-body {
   display: flex;
   flex-flow: row nowrap;
-  border-bottom: 3px solid #778899;
-  padding: 25px 10px 25px 10px;  
+  border-bottom: solid #778899;
+  font-size: 1.25rem;
+  padding: 0.5rem;  
  }
 
  /* error message styles */
 
  .error-message {
-   border: 3px solid red;
+   border: 0.1rem solid red;
    color: red;
    text-align: center;
-   margin-top: 20px;
-   width: 100%;   
+   font-size: 1.25rem;
+   margin-top: 2vh;
+   width: 90vw;
  }
 
  .hide {
   display: none;
-
  }
+
+ @media only screen and (min-width: 1024px) {
+  .parent {
+    display: flex;
+    flex-direction: row;
+  }
+ }
+
+ 

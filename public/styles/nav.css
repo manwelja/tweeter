@@ -56,3 +56,26 @@ nav .nav-col2-arrow {
   from { transform : translateY(0em) }
   to   { transform : translateY(0.5em) } /* slide down to make room for advertisements */
 }
+
+@media only screen and (min-width: 1024px) {
+  nav {       
+    opacity: 0.9;    
+    background-color: #EC9706;
+    background-image: url("/images/asfalt-light.png");
+    background-color: transparent;
+    background-image: none;
+  }
+
+  /* App name section of the nav */
+  nav .nav-col1 {
+    flex-grow: 1;
+    background-color: transparent;
+    background-image: none;
+  }
+  nav .nav-col2 {
+  
+    background-color: #EC9706;
+    background-image: url("/images/asfalt-light.png");   
+    flex-grow: 1;
+ }
+}

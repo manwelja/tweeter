@@ -131,15 +131,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     //serialize the tweet text for posting
     const tweetData = $(this).serialize();
     
-    //post teh tweet data using alax
+    //post the tweet data using alax
     $.ajax({
       method: "POST",
       data: tweetData,
       url: "/tweets",
     })
       .then((res) => {
-        //if success, empty the tweet field and render the resulting tweet
+        //if success, empty the tweet field, reset the counter and render the resulting tweet
         $("#tweet-text").val("");
+        $('output[name="counter"]').val(140);
         renderTweets([res]);
       })
       //alert the user if an error was encountered with the submission process
