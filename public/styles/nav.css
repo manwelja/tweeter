@@ -6,38 +6,42 @@ span {
 nav {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
-  padding: 0em 1.5em 1.5em;
-  justify-content: space-between;
-  align-items: flex-end;  
+  padding: 0.5em 1.5em 0em 1.5em;
   z-index: 1;
   width: 100%;
   position: fixed;
   top: 0;
 }
 
+
 /* name of app */
 .nav-span1 {
-  display: flex;  
+ /* display: flex;  
   flex-direction: column;
+  align-items: flex-start;*/
 }
 
 /* write a new tweet */
 .nav-span2 {
   display: flex;  
   flex-direction: column;
-  align-items: center;
-  font-size: medium;
+  justify-content: center;  
+}
+
+.nav-span2-text {
+  font-family: sans-serif;
 }
 
 /* animated arrow */
 .nav-span2-arrow {
+  align-self: center;
   color: red;
   animation-name            : displaceContent;
   animation-duration        : 1.5s;
- /* animation-delay           : 1s;*/
   animation-iteration-count : infinite;
   animation-fill-mode       : forwards;
 }

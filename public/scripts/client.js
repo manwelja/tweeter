@@ -99,7 +99,7 @@ const tweetError = function() {
     return true;
   }
   if ($tweetTextLen === 0) {
-    displayError(`You are trying to submit an empty tweet.  Please enter something to post.`)
+    displayError(`You are trying to submit an empty tweet.  Please enter something to post.`);
     return true;
   }
   return false;
@@ -163,6 +163,8 @@ $(document).ready(function() {
         renderTweets(morePostsHtml);
       });
   };
+
   $("#error-message").slideUp(1000);
+  
   loadTweets();
 });
