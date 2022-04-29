@@ -92,22 +92,7 @@ const displayError = function(errMsg) {
  
 window.addEventListener('DOMContentLoaded', () => {
   //Catch when user clicks on "new" link in nav bar and toggle the display of the compose section
-  $("#compose-tweet").on("click", function(event) {
-    event.preventDefault();
-    if($(".new-tweet").hasClass("hide")) {
-      $(".new-tweet").slideDown(1000);
-      $(".new-tweet").removeClass("hide");
-    } else {
-      //If the compose section is being hidded, reset relevant fields
-      $(".new-tweet").slideUp(1000);
-      $(".new-tweet").addClass("hide");
-      $("#tweet-text").val("");
-      $('output[name="counter"]').val(140);
-    }
-    //scroll to the top of the page
-    $('html, body').animate({ scrollTop: 0 }, 'fast');
-  });
-
+  
   // when the new tweet form is submitted, let's display the tweets!
   $(".new-tweet-form").on("submit", function(event) {
     event.preventDefault();
@@ -137,6 +122,7 @@ window.addEventListener('DOMContentLoaded', () => {
         $("#tweet-text").val("");
         $('output[name="counter"]').val(140);
         $(".new-tweet").slideUp(1000);
+        $(".new-tweet").addClass("hide");
         renderTweets([res]);
       })
       //alert the user if an error was encountered with the submission process
@@ -160,9 +146,10 @@ $(document).ready(function() {
         renderTweets(morePostsHtml);
       });
   };
-  //Hide the error message box and compse sections
+  //Hide the error message box
   $(".new-tweet").addClass("hide");
   $("#error-message").slideUp(1000);
+  $(".new-tweet").slideUp(1000);
     
   loadTweets();
 });
