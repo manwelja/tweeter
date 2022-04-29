@@ -10,6 +10,7 @@ In it's current state it meets the core and some of the stretch expectations for
 -  Allows users to post tweets to the "Tweeter" site which also displays existing tweets
 -  Displays error messages if the tweet is empty or too long
 -  Toggles the visibiity of the compose section with the click of a button
+-  Presents the user with an up arrow so that they can quickly jump back to the top of the page
 -  Implements responsive design techniques so that the content displays properly across different media types
 -  Implements animations and interactive features to enhance the user experience
 
@@ -27,6 +28,10 @@ In it's current state it meets the core and some of the stretch expectations for
 
 ### 4. Displaying updated character counter
 !["Displaying updated character counter"](https://github.com/manwelja/tweeter/blob/master/docs/Tweeter-counter-update.png)
+
+### 5. Displaying page up button
+!["Displaying page up button"](https://github.com/manwelja/tweeter/blob/master/docs/Tweeter-scroll.png)
+
 
 ## Getting Started
 
