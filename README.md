@@ -2,15 +2,16 @@
 
 Tweeter is a simple, single-page Twitter clone.  
 
-In it's current state it meets the core expectations for the Lighthouse Labs Twitter project, but additional "Stretch" functionality may be added on in the next iteration.
+In it's current state it meets the core and some of the stretch expectations for the Lighthouse Labs Twitter project, but additional "Stretch" functionality may be added on in the next iteration.
 
 
 ## Project Functionality Overview
 
 -  Allows users to post tweets to the "Tweeter" site which also displays existing tweets
 -  Displays error messages if the tweet is empty or too long
+-  Toggles the visibiity of the compose section with the click of a button
 -  Implements responsive design techniques so that the content displays properly across different media types
--  Implements animations and interactive features to make enhance teh user experience
+-  Implements animations and interactive features to enhance the user experience
 
 
 ## Final Product - Screenshots of Tweet page
