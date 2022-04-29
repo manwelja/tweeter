@@ -38,6 +38,12 @@
   vertical-align: bottom;    
 }
 
+.compose-tweet {
+  color: #FFFFFF;
+}
+.compose-tweet:hover {
+  font-weight: 600;
+}
 .red {
   color: red;
 }
