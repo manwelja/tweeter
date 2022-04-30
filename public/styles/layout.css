@@ -124,7 +124,7 @@ main {
 /*scroll button styles */
 .div-scroll-button {
   width: 100%;
-  text-align: right; 
+  text-align: right;   
 }
  #scroll-button {
   opacity: 0.8;
@@ -168,7 +168,6 @@ main {
     margin-top: 2%;
     width: 95%;
   }
-
  }
  /* Mobile: maximum width of 420px - this is where the app starts looking rough*/
  @media only screen and (max-width: 420px) {

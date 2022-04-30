@@ -101,12 +101,8 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    $("#error-message").slideUp(1000);
     //if all is good, hide the error message section
-    if (!$("#error-message").addClass("hide")) {
-      $("#error-message").slideUp(1000);
-    }
-  
+    resetErrorSection();
         
     //serialize the tweet text for posting
     const tweetData = $(this).serialize();
@@ -119,10 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
       .then((res) => {
         //if success, empty and hide the tweet field, reset the counter and render the resulting tweet
-        $("#tweet-text").val("");
-        $('output[name="counter"]').val(140);
-        $(".new-tweet").slideUp(1000);
-        $(".new-tweet").addClass("hide");
+        resetComposeSection();
         renderTweets([res]);
       })
       //alert the user if an error was encountered with the submission process

@@ -2,15 +2,12 @@ window.addEventListener('DOMContentLoaded', () => {
   //Catch when user clicks on "new" link in nav bar and toggle the display of the compose section
   $("#compose-tweet").on("click", function(event) {
     event.preventDefault();
-    if($(".new-tweet").hasClass("hide")) {
-      $(".new-tweet").slideDown(1000);
-      $(".new-tweet").removeClass("hide");
+    if ($(".new-tweet").hasClass("hide")) {
+      displayComposeSection();
     } else {
       //If the compose section is being hidded, reset relevant fields
-      $(".new-tweet").slideUp(1000);
-      $(".new-tweet").addClass("hide");
-      $("#tweet-text").val("");
-      $('output[name="counter"]').val(140);
+      resetComposeSection();
+      resetErrorSection();
     }
     //scroll to the top of the page
     $('html, body').animate({ scrollTop: 0 }, 'fast');
@@ -31,6 +28,10 @@ window.addEventListener('DOMContentLoaded', () => {
   $("#scroll-button").on("click", function(event) {
     // When the user clicks on the button, scroll to the top of the document
     $('html, body').animate({ scrollTop: 0 }, 'fast');
+
+    if($(".new-tweet").hasClass("hide")) {
+      displayComposeSection();
+    }
   });
   
 });
